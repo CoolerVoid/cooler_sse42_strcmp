@@ -8,7 +8,6 @@ contact: c00f3r@gmail.com
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <pcre.h>
 #include <x86intrin.h>
 #include <cpuid.h>
 #include <inttypes.h>
