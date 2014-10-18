@@ -1,7 +1,7 @@
 reset
-dx=5.
+dx=3.
 n=2
-total_box_width_relative=0.75
+total_box_width_relative=0.25
 gap_width_relative=0.1
 d_width=(gap_width_relative+total_box_width_relative)*dx/2.
 reset
