@@ -12,7 +12,7 @@ set border linecolor rgbcolor "cyan"
 set key textcolor rgbcolor "yellow"
 set title "Coolerudo's Benchmark strcmp() vs sse4.2 strcmp()" textcolor rgbcolor "cyan"
 set ylabel "CPU cycles" textcolor rgbcolor "yellow"
-set xlabel "Green - simple strcmp()\nCyan - SSE4.2 strcmp()" textcolor rgbcolor "yellow"
+set xlabel "Cyan - simple strcmp()\nGreen - SSE4.2 strcmp()" textcolor rgbcolor "yellow"
 set obj 1 rectangle behind from screen 0,0 to screen 1,1
 set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
 set boxwidth total_box_width_relative/n relative
