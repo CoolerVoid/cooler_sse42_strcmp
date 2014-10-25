@@ -1,5 +1,5 @@
 ARCH := $(shell getconf LONG_BIT)
-PATH_TRUE := $(shell pwd)/
+PATH_TRUE := $(shell /usr/bin/pwd)/
 
 CC=/usr/bin/gcc
 OBJ_32 := $(PATH_TRUE)strcmp_sse42_32.o
