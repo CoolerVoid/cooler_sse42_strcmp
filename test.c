@@ -124,7 +124,7 @@ int main()
 
 	} while (++x < 2);
  
-	printf(":::  strcmp() with SSE42: %lld  cicles\n", y);
+	printf(":::  strcmp() with SSE42: %lld  cycles\n", y);
 	fprintf(stdout,"Array size of words is: %d \n", array_elements(text));	
 	fprintf(stdout,"Benchmark strcmp() with SSE42 matchs is: %d \n\n", matchs);
 
@@ -139,7 +139,7 @@ int main()
 
 	} while (++x < 2);
  
-	printf("::: simple strcmp(): %lld  cicles\n", y);
+	printf("::: simple strcmp(): %lld  cycles\n", y);
 	fprintf(stdout,"Array size of words is: %d \n", array_elements(text));	
 	fprintf(stdout,"Benchmark strcmp() matchs is: %d \n\n", matchs);
 
