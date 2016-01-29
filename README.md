@@ -1,6 +1,6 @@
 Simple study about SSE42,  strcmp() vs strcmp() with SSE42
 ===================
-![Alt text](https://lh4.googleusercontent.com/-_nhBYtIoj3Q/VEIMlRFT_II/AAAAAAAAH_Y/58_jld2_r50/w640-h480-no/profit.png)
+![Alt text](https://raw.githubusercontent.com/CoolerVoid/cooler_sse42_strcmp/master/profit.png)
 
 strcmp() function implementation with SSE42
 
