@@ -16,6 +16,10 @@ contact: c00f3r@gmail.com
 
 void cpu_get(int* cpuinfo, int info)
 {
+
+
+
+#if UINTPTR_MAX == 0xffffffff
 	__asm__ __volatile__(
 		"xchg %%ebx, %%edi;"
 		"cpuid;"
@@ -23,6 +27,18 @@ void cpu_get(int* cpuinfo, int info)
 		:"=a" (cpuinfo[0]), "=D" (cpuinfo[1]), "=c" (cpuinfo[2]), "=d" (cpuinfo[3])
 		:"0" (info)
 	);
+#elif UINTPTR_MAX == 0xffffffffffffffff
+	__asm__ __volatile__(
+		"xchg %%rbx, %%rdi;"
+		"cpuid;"
+		"xchg %%rbx, %%rdi;"
+		:"=a" (cpuinfo[0]), "=D" (cpuinfo[1]), "=c" (cpuinfo[2]), "=d" (cpuinfo[3])
+		:"0" (info)
+	);
+#endif
+
+
+
 }
 
 void test_sse42_enable()
@@ -125,7 +141,7 @@ int main()
 	} while (++x < 2);
  
 	printf(":::  strcmp() with SSE42: %lld  cycles\n", y);
-	fprintf(stdout,"Array size of words is: %d \n", array_elements(text));	
+	fprintf(stdout,"Array size of words is: %ld \n", array_elements(text));	
 	fprintf(stdout,"Benchmark strcmp() with SSE42 matchs is: %d \n\n", matchs);
 
 
@@ -140,7 +156,7 @@ int main()
 	} while (++x < 2);
  
 	printf("::: simple strcmp(): %lld  cycles\n", y);
-	fprintf(stdout,"Array size of words is: %d \n", array_elements(text));	
+	fprintf(stdout,"Array size of words is: %ld \n", array_elements(text));	
 	fprintf(stdout,"Benchmark strcmp() matchs is: %d \n\n", matchs);
 
 

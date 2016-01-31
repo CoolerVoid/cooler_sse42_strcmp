@@ -9,10 +9,10 @@ strcmp_sse42_64:
 	mov		rax, rdi
 	mov		rdx, rsi
 	sub		rax, rdx
-	sub		rdx, 16
+	sub		rdx, 32
  
 strloop_64:
-	add		rdx, 16
+	add		rdx, 32
 	movdqu		xmm0, [rdx]
 	pcmpistri	xmm0, [rdx+rax], 0011000b
 	ja		strloop_64
